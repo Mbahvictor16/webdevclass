@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0%;
+        padding: 0%;
+      }
+
+      section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: purple;
+      }
+
+      .quiz-box {
+        background: #fff;
+        padding: 24px;
+        aspect-ratio: 16/9;
+        width: min(90%, 500px);
+        border-radius: 6px;
+      }
+
+      .option {
+        height: 3rem;
+        margin-block: 36px;
+        position: relative;
+        width: 80%;
+        margin-inline: auto;
+      }
+
+      label {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+      }
+
+      input[type="radio"] {
+        appearance: none;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      input[type="radio"]:focus {
+        border: 1px solid purple;
+        background: rgba(144, 80, 144, 0.257);
+      }
+
+      input[type="radio"]:hover {
+        border: 1px solid purple;
+      }
+
+      .buttons-prev-next {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      button {
+        width: 100px;
+        padding: 8px 12px;
+        background: purple;
+        color: #ffffff;
+        border: 1px solid purple;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="quiz-box">
+        <h3>What is the name of?......</h3>
+
+        <div class="options">
+          <div class="option">
+            <label for="option-1">Option A</label>
+            <input type="radio" name="option" id="option-1" value="Option A" />
+          </div>
+          <div class="option">
+            <label for="option-1">Option A</label>
+            <input type="radio" name="option" id="option-2" />
+          </div>
+        </div>
+
+        <div class="buttons-prev-next">
+          <div class="button-prev">
+            <button>Prev</button>
+          </div>
+
+          <div class="button-next">
+            <button>Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

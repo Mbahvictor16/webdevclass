@@ -59,6 +59,12 @@ nav {
   background: inherit;
   margin-left: -16px;
   transform: translateX(-100%);
+  z-index: 1;
+  transition: transform 0.55s ease-in-out;
+}
+
+.open-nav-bar {
+  transform: translateX(0);
 }
 
 .nav-button {
@@ -72,6 +78,24 @@ nav {
 .nav-click {
   width: 95%;
   margin: auto;
+}
+
+.nav-click.open-nav-button div {
+  opacity: 0;
+}
+
+.nav-click.open-nav-button::before {
+  content: "";
+  transform: rotate(-45deg);
+  transform-origin: center;
+  margin-block: -8px;
+}
+
+.nav-click.open-nav-button::after {
+  content: "";
+  transform: rotate(45deg);
+  transform-origin: center;
+  margin-block: -8px;
 }
 
 .nav-click::before,

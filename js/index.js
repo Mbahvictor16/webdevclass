@@ -369,7 +369,7 @@ const newSET = new Set([...DOC]);
 
 const changeBackToArray = [...newSET];
 
-const ANYARRAY = ["f", "b", "c", "d", "e"];
+const ANYARRAY = ["a", "b", "c", "d", "e"];
 
 const ARRAYOFNUM = [1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -393,35 +393,151 @@ const ReturningVAR = AFunctionWithReturn();
 
 let filterARR = [];
 
-ANYARRAY.filter((letter) => {
-  if (letter === "a") {
-    filterARR.push(letter);
-  }
-});
+// ANYARRAY.filter((letter) => {
+//   if (letter === "a") {
+//     filterARR.push(letter);
+//   }
+// });
 
-console.log(filterARR);
+// console.log(filterARR);
 
-ANYARRAY.map((letter) => {
-  if (letter === "a") {
-    return;
-  }
-});
+// ANYARRAY.map((letter) => {
+//   if (letter === "a") {
+//     return;
+//   }
+// });
 
 //Happy Path --- happy Path
 //Sad Path --- Error Handling
 
-console.log(ANYARRAY.reverse());
+// console.log(ANYARRAY.reverse());
 
-const includeARR = ANYARRAY.includes("f");
+// const includeARR = ANYARRAY.includes("f");
 
-ARRAYOFNUM.forEach((num) => {
-  num++;
-  console.log(num);
-});
+// ARRAYOFNUM.forEach((num) => {
+//   num++;
+//   console.log(num);
+// });
 
-console.log(includeARR);
+// console.log(includeARR);
 
 // Create a function that will accept a parmeter(must be a number) age. You will check this:
 // 0 - 17 - Underage
 // 18 - 59 - Adult
 // 60+ - You're too old.
+
+// 1. create a function that will accept a parmeter(must be a number) age
+
+function CheckAge(age) {
+  //2. check the ages
+  if (age <= 17) {
+    console.log("You are underage");
+  }
+
+  if (age >= 18 && age <= 59) {
+    console.log("You are an adult");
+  }
+
+  if (age >= 60) {
+    console.log("You are too old");
+  }
+}
+
+//3.Run the function
+CheckAge(17);
+
+const ToDestructureOBJ = {
+  className: "WEB DEV",
+  time: "12:00 PM",
+  Location: "NIIT",
+};
+
+// console.log(ToDestructureOBJ.className);
+
+const { className, time, Location } = ToDestructureOBJ;
+
+console.log(className);
+console.log(time);
+console.log(Location);
+
+// function ToDestructureFunction({ className, time, ...args }) {
+//   console.log(className);
+//   console.log(time);
+//   console.log(args);
+// }
+
+// ToDestructureFunction(ToDestructureOBJ);
+
+// console.log(ANYARRAY[0]);
+
+let [a, b, c, d, e] = ANYARRAY;
+
+console.log(a);
+// document, window
+
+//id, class
+
+var ANELEMENT = document.getElementById("an-img");
+let CLASSESEL = document.querySelectorAll(".box");
+var queryAnElement = document.querySelectorAll("img");
+
+const APARAGRAPH = document.getElementById("paragraph");
+
+APARAGRAPH.innerHTML = `<a href="./assets/img/conditioncookie.png" download="anothername"
+>Download</a
+>`;
+
+const ANINPUT = document.getElementById("email");
+
+// ANINPUT.value = "email";
+
+const ASTR = `we are having ${className} class`;
+
+// document.body.style.backgroundColor = "red";
+
+//events and events listeners
+
+const Btn = document.querySelector("button[id='button']");
+
+function AddElementToPage(event) {
+  // const p = document.createElement("p");
+  // p.innerText = "I just created a new element";
+
+  // document.body.append(p);
+
+  console.log(event.target.id);
+}
+
+Btn.addEventListener("click", AddElementToPage);
+
+ANINPUT.addEventListener("change", (e) => {
+  console.log(e.target.value);
+});
+
+ANINPUT.addEventListener("input", (e) => {
+  console.log(e.target.value);
+});
+
+ANINPUT.addEventListener("focus", (e) => {
+  console.log(e.target);
+});
+
+// Btn.addEventListener("click", () => {
+//   AddElementToPage("button");
+// });
+
+CLASSESEL.forEach((el) => {
+  el.addEventListener("mouseenter", (e) => {
+    console.log(CLASSESEL);
+  });
+});
+
+CLASSESEL[0].addEventListener("mouseenter", (e) => {
+  console.log(CLASSESEL);
+});
+
+console.log(ASTR);
+
+// You will have two input elements that accepts numbers. When you click a button, it will calculate sum of the values in the input and display the result in the DOM.
+
+// Hint: All input values comes in as string. Transform it with Number() function.
