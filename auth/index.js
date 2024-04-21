@@ -56,12 +56,14 @@ function getCookie(name) {
   return "";
 }
 
+document.addEventListener("loadstart", checkCookie)
+
 function checkCookie() {
   let cookieid = getCookie("name");
   if (cookieid != "") {
-    alert("Welcome again " + username);
+    //alert("Welcome again " + cookieid);
   } else {
-    console.log("No cookies");
+    location.href = "./login.html"
   }
 }
 getCookie(name)
