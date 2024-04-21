@@ -1,7 +1,6 @@
 document.cookie = "name=myname; expires=Tue, 16 Apr 2024 13:48:00 UTC";
 
-
-const d = new Date()
+const d = new Date();
 
 console.log(d.getDate()); // Today's date
 
@@ -31,7 +30,7 @@ console.log(d.getUTCDay());
 
 console.log(d.getUTCHours());
 
-console.log()
+console.log();
 
 // setInterval(() => {
 //     console.log(d.getSeconds());
@@ -41,4 +40,30 @@ console.log()
 //     console.log(d.getSeconds());
 // }, 10000);
 
+function getCookie(name) {
+  let cname = name + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(cname.length, c.length);
+    }
+  }
+  return "";
+}
 
+function checkCookie() {
+  let cookieid = getCookie("name");
+  if (cookieid != "") {
+    alert("Welcome again " + username);
+  } else {
+    console.log("No cookies");
+  }
+}
+getCookie(name)
+console.log(getCookie(name));
+checkCookie()

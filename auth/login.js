@@ -23,9 +23,10 @@ function SubmitForm(e) {
     .then((res) => res.json())
     .then((val) => {
       if (!val.err) {
-        document.cookie = `user=${val.id}; expires=${
+        document.cookie = `user=${val.response.id}; expires=${
           Date.now() + 30 * 24 * 60 * 60 * 1000
         }`;
+        console.log(val);
         location.href = "./index.html";
       } else {
         throw new Error(val.errMsg)
