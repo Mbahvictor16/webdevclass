@@ -1,3 +1,5 @@
+import urlToImage from "../img/urlToImage/jpg"
+
 //HTTP REQUEST
 
 //FETCH API
@@ -27,30 +29,30 @@
 //   .then((res) => res.json())
 //   .then((json) => console.log(json));
 
-const form = document.querySelector("form");
-const email = document.querySelector('input[name="email"]');
-const password = document.querySelector('input[name="password"]');
-const username = document.querySelector('input[name="username"]');
+// const form = document.querySelector("form");
+// const email = document.querySelector('input[name="email"]');
+// const password = document.querySelector('input[name="password"]');
+// const username = document.querySelector('input[name="username"]');
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
 
-  fetch("http://localhost:3000/users", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      username: username.value,
-      email: email.value,
-      password: password.value,
-    }),
-  })
-    .then((res) => res.json())
-    .then((json) => console.log(json))
-    .catch((err) => console.log(err));
+//   fetch("http://localhost:3000/users", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({
+//       username: username.value,
+//       email: email.value,
+//       password: password.value,
+//     }),
+//   })
+//     .then((res) => res.json())
+//     .then((json) => console.log(json))
+//     .catch((err) => console.log(err));
   
-  form.reset()
+//   form.reset()
 
-  location.href = "./redirect.html"
-});
+//   location.href = "./redirect.html"
+// });
